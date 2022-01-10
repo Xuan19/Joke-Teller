@@ -3,22 +3,20 @@ const buttonA = document.getElementById('button2');
 const buttonR = document.getElementById('button3');
 const buttonT = document.getElementById('twitter');
 const buttonN = document.getElementById('button4');
+const buttonL = document.getElementById('loader');
 const audioElement = document.getElementById('audio');
 
 let jokeA;
 let jokeQ;
 
-function toggleButton (evt) {
-  console.log(evt);
-  buttonQ.hidden = !buttonQ.hidden
+function toggleButton ( ) {
+  // console.log(evt);
+  // buttonQ.hidden = !buttonQ.hidden
   buttonA.hidden = !buttonA.hidden
   buttonR.hidden = !buttonR.hidden
   buttonT.hidden = !buttonT.hidden
   buttonN.hidden = !buttonN.hidden
-}
-
-function test (){
-  
+  buttonL.hidden = !buttonL.hidden
 }
 
 // VoiceRSS Speech Function, passing joke to VoiceRSS API
@@ -45,7 +43,9 @@ function tellMe(joke) {
   // Get Jokes from Joke API
 async function getJoke() {
   const proxyUrl = 'https://vast-hollows-76788.herokuapp.com/';
-  const apiUrl = 'https://www.blagues-api.fr/api/random'
+  const apiUrl = 'https://www.blagues-api.fr/api/random';
+  buttonL.hidden = false;
+  buttonQ.hidden = true;
   try {
     const reponse = await fetch(proxyUrl+apiUrl, {
       headers: {
@@ -57,7 +57,7 @@ async function getJoke() {
     jokeQ = data.joke;
     jokeA = data.answer;
 
-    console.log(data);
+    // console.log(data);
     /* Expected output:
     {
       "id": 1,
@@ -70,7 +70,7 @@ async function getJoke() {
   
   } catch (error) {
     console.log(error)
-  }
+  } 
 };
 
 // Answer the joke
@@ -93,7 +93,7 @@ function tweetJoke () {
 
 // Event Listeners
 buttonQ.addEventListener('click', getJoke);
-buttonN.addEventListener('click', ()=>{getJoke();toggleButton()});
+buttonN.addEventListener('click', ()=>{toggleButton();getJoke();});
 buttonA.addEventListener('click', answerJoke);
 buttonR.addEventListener('click', ()=>{tellMe(jokeQ);toggleButton()});
 buttonT.addEventListener('click', tweetJoke);
