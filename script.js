@@ -4,6 +4,7 @@ const buttonR = document.getElementById('button3');
 const buttonT = document.getElementById('twitter');
 const buttonN = document.getElementById('button4');
 const buttonL = document.getElementById('loader');
+const buttonV = document.getElementById('voice-loader');
 const audioElement = document.getElementById('audio');
 
 let jokeA;
@@ -16,7 +17,7 @@ function toggleButton ( ) {
   buttonR.hidden = !buttonR.hidden
   buttonT.hidden = !buttonT.hidden
   buttonN.hidden = !buttonN.hidden
-  buttonL.hidden = !buttonL.hidden
+  buttonV.hidden = !buttonV.hidden
 }
 
 // VoiceRSS Speech Function, passing joke to VoiceRSS API
@@ -56,6 +57,8 @@ async function getJoke() {
     const data = await reponse.json();
     jokeQ = data.joke;
     jokeA = data.answer;
+    buttonL.hidden = true;
+    buttonV.hidden = false
 
     // console.log(data);
     /* Expected output:
