@@ -46,6 +46,7 @@ async function getJoke() {
   const proxyUrl = 'https://vast-hollows-76788.herokuapp.com/';
   const apiUrl = 'https://www.blagues-api.fr/api/random';
   buttonL.hidden = false;
+  buttonV.hidden = true;
   buttonQ.hidden = true;
   try {
     const reponse = await fetch(proxyUrl+apiUrl, {
