@@ -51,7 +51,7 @@ async function getJoke() {
   try {
     const reponse = await fetch(proxyUrl+apiUrl, {
       headers: {
-            'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjg1MjQ0MDM1NDE3NTA1Nzk5IiwibGltaXQiOjEwMCwia2V5IjoicGJnNG5ydEE0VVF1Y2NTcnRoWGpuSTZtbHVKcVBQaEJxTER5SWdiQml4V0pDZ3BZRGoiLCJjcmVhdGVkX2F0IjoiMjAyMS0xMi0yM1QxNTo0OToyMCswMDowMCIsImlhdCI6MTY0MDI3NDU2MH0.oG746JxMeoDS_zTCi1AR4Z49VE5tdrPGfG7rGUkmAJQ
+            'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjg1MjQ0MDM1NDE3NTA1Nzk5IiwibGltaXQiOjEwMCwia2V5IjoiU1BjTDhJbkFsWTN5elcwalNzelRqR3BnVm81RnRjNUJuMVg2N3R4UHdoODlpU1NjeEEiLCJjcmVhdGVkX2F0IjoiMjAyMy0wMi0wNFQxMTowMDoxOSswMDowMCIsImlhdCI6MTY3NTUwODQxOX0.H2wRMX0WWaIvmZwOPrD6z5X_XJUtNkXnxLQGHVLAGmw
             `
           }
     });
