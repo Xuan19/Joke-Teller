@@ -43,16 +43,17 @@ function tellMe(joke) {
 }
   // Get Jokes from Joke API
 async function getJoke() {
-  const proxyUrl = 'https://vast-hollows-76788.herokuapp.com/';
+  // const proxyUrl = 'https://vast-hollows-76788.herokuapp.com/';
   const apiUrl = 'https://www.blagues-api.fr/api/random';
   buttonL.hidden = false;
   buttonV.hidden = true;
   buttonQ.hidden = true;
   try {
-    const reponse = await fetch(proxyUrl+apiUrl, {
+    const reponse = await fetch(apiUrl, {
       headers: {
             'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjg1MjQ0MDM1NDE3NTA1Nzk5IiwibGltaXQiOjEwMCwia2V5IjoiU1BjTDhJbkFsWTN5elcwalNzelRqR3BnVm81RnRjNUJuMVg2N3R4UHdoODlpU1NjeEEiLCJjcmVhdGVkX2F0IjoiMjAyMy0wMi0wNFQxMTowMDoxOSswMDowMCIsImlhdCI6MTY3NTUwODQxOX0.H2wRMX0WWaIvmZwOPrD6z5X_XJUtNkXnxLQGHVLAGmw
             `
+            // 'Access-Control-Allow-Origin': '*'
           }
     });
     const data = await reponse.json();
